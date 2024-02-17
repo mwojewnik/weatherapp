@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Image, Keyboard, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
-import {getWeatherInformation} from "../../apiCalls/getWeatherInformation.ts";
+import {Platform, StyleSheet, TextInput, View} from "react-native";
 
 
 export const Input = ({handleSubmmit}: any) => {
@@ -14,7 +13,6 @@ export const Input = ({handleSubmmit}: any) => {
 
     return (
         <View style={[styles.container, {paddingVertical: Platform.OS === 'ios' ? 10 : 0}]}>
-
             <TextInput
                 onChangeText={setCityName}
                 onSubmitEditing={handlePress}
@@ -22,12 +20,6 @@ export const Input = ({handleSubmmit}: any) => {
                 style={[styles.input]}
                 placeholderTextColor='#fff'
                 placeholder='Nazwa miasta...'/>
-
-            {cityName.length >= 2 &&
-                <TouchableOpacity onPress={handlePress}>
-                    <Text style={{color: '#fff'}}>go</Text>
-                </TouchableOpacity>
-            }
         </View>
 
     );

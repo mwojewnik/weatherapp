@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Image, ImageBackground, SafeAreaView, StyleSheet, Text, TextInput, View,} from 'react-native';
+import {ImageBackground, SafeAreaView, StyleSheet, Text, View,} from 'react-native';
 import {Input} from "./src/ui/atoms/Input.tsx";
 import {getWeatherInformation} from "./src/apiCalls/getWeatherInformation.ts";
 import {InformationSection} from "./src/ui/atoms/InformationSection.tsx";
@@ -32,7 +32,6 @@ const App = () => {
 
                     <Input handleSubmmit={handleSubmit}/>
                     <Text style={{color: 'red', marginTop: 5}}>{error}</Text>
-
 
                     <InformationSection weatherInf={weatherInf}/>
 
