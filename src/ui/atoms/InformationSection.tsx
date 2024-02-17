@@ -12,6 +12,7 @@ export const InformationSection = ({weatherInf}: any) => {
     if (weatherInf) {
         return (
             <View style={[styles.container]}>
+                <Text style={styles.CityName}>{weatherInf.name}</Text>
                 <Text style={styles.temperature}>{formatTemperature(weatherInf?.main?.temp)}°</Text>
                 <Image style={styles.image}
                        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/>
@@ -24,7 +25,6 @@ export const InformationSection = ({weatherInf}: any) => {
                     <Text style={[styles.whiteFont, {marginTop: 15}]}>Wilgotność </Text>
                     <Text style={[styles.whiteFont, {fontWeight: '700'}]}>{weatherInf?.main?.humidity}%</Text>
                 </View>
-
             </View>
         );
     } else {
@@ -34,14 +34,22 @@ export const InformationSection = ({weatherInf}: any) => {
 
 
 const styles = StyleSheet.create({
+    CityName: {
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: '#fff',
+        marginTop: 40,
+        marginBottom:0
+    },
     container: {
         alignItems: 'center',
-        paddingTop: 40,
         flexDirection: 'column',
         justifyContent: 'space-between',
     },
     image: {
-        height: 120, width: 120
+        height: 100,
+        width: 100,
+
     },
     whiteFont: {
         color: '#fff',
@@ -50,10 +58,11 @@ const styles = StyleSheet.create({
         fontSize: 70,
         fontWeight: 'bold',
         color: '#fff',
-        paddingTop: '15%',
+        marginBottom: -20
+
     },
     infContainer: {
         alignItems: 'center',
-        marginTop: 60
+        marginTop: 50
     },
 });

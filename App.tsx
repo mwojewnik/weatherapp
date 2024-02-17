@@ -54,12 +54,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between'
     },
-    temperature: {
-        fontSize: 70,
-        fontWeight: 'bold',
-        color: '#fff',
-        paddingTop: '15%',
-    }
+
 });
 
 export default App;
