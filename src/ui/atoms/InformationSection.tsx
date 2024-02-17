@@ -1,11 +1,29 @@
 import React from 'react';
 import {Image, Platform, StyleSheet, Text, View} from "react-native";
 
-export const InformationSection = ({weatherInf}: any) => {
-    const icon = weatherInf?.weather[0].icon
+interface WeatherInformation {
+    name?: string;
+    main?: {
+        temp?: number;
+        feels_like?: number;
+        pressure?: number;
+        humidity?: number;
+    };
+    weather?: {
+        icon?: string;
+    }[];
+}
 
-    const formatTemperature = (temp: number) => {
-        return Math.round(temp)
+
+interface InformationSectionProps {
+    weatherInf?: WeatherInformation;
+}
+
+export const InformationSection = ({weatherInf}: InformationSectionProps) => {
+    const icon: string | undefined = weatherInf?.weather && weatherInf.weather[0]?.icon || '';
+
+    const formatTemperature = (temp: number | undefined) => {
+        return temp !== undefined ? Math.round(temp) : '';
     }
 
 

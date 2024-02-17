@@ -2,7 +2,12 @@ import React, {useState} from 'react';
 import {Platform, StyleSheet, TextInput, View} from "react-native";
 
 
-export const Input = ({handleSubmmit}: any) => {
+
+interface InputProps {
+    handleSubmmit: (cityName: string) => void;
+}
+
+export const Input = ({handleSubmmit}: InputProps) => {
     const [cityName, setCityName] = useState('');
 
 
