@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from "react-native";
+import {Image, Platform, StyleSheet, Text, View} from "react-native";
 
 export const InformationSection = ({weatherInf}: any) => {
     const icon = weatherInf?.weather[0].icon
@@ -13,8 +13,9 @@ export const InformationSection = ({weatherInf}: any) => {
         return (
             <View style={[styles.container]}>
                 <Text style={styles.CityName}>{weatherInf.name}</Text>
-                <Text style={styles.temperature}>{formatTemperature(weatherInf?.main?.temp)}°</Text>
-                <Image style={styles.image}
+                <Text
+                    style={[styles.temperature, {marginBottom: Platform.OS === 'ios' ? -20 : 0}]}>{formatTemperature(weatherInf?.main?.temp)}°</Text>
+                <Image style={[styles.image, {marginBottom: Platform.OS === 'ios' ? 80 : 0}]}
                        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/>
                 <View style={styles.infContainer}>
                     <Text style={styles.whiteFont}>Odczuwalna temperatura </Text>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#fff',
         marginTop: 40,
-        marginBottom:0
+        marginBottom: 0
     },
     container: {
         alignItems: 'center',
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 70,
         fontWeight: 'bold',
         color: '#fff',
-        marginBottom: -20
+
 
     },
     infContainer: {
