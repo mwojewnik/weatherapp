@@ -30,12 +30,11 @@ const App = () => {
             <SafeAreaView style={{position: 'relative'}}>
                 <View style={styles.container}>
 
-
-                    <InformationSection weatherInf={weatherInf}/>
-
                     <Input handleSubmmit={handleSubmit}/>
                     <Text style={{color: 'red', marginTop: 5}}>{error}</Text>
 
+
+                    <InformationSection weatherInf={weatherInf}/>
 
                 </View>
             </SafeAreaView>

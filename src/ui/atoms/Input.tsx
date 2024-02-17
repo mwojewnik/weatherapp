@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         width: '70%',
         justifyContent: "space-between",
-        marginTop:'30%'
+
     },
     input: {
         fontSize: 18,
