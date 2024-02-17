@@ -14,7 +14,7 @@ export const InformationSection = ({weatherInf}: any) => {
             <View style={[styles.container]}>
                 <Text style={styles.CityName}>{weatherInf.name}</Text>
                 <Text
-                    style={[styles.temperature, {marginBottom: Platform.OS === 'ios' ? -20 : 0}]}>{formatTemperature(weatherInf?.main?.temp)}°</Text>
+                    style={styles.temperature}>{formatTemperature(weatherInf?.main?.temp)}°</Text>
                 <Image style={[styles.image, {marginBottom: Platform.OS === 'ios' ? 80 : 0}]}
                        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/>
                 <View style={styles.infContainer}>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 70,
         fontWeight: 'bold',
         color: '#fff',
-
+        marginBottom: -20
 
     },
     infContainer: {
