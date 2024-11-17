@@ -9,7 +9,6 @@ const App = () => {
     const [weatherInf, setWeatherInf] = useState(null);
     const [error, setError] = useState(null)
 
-
     console.log('getWeatherInformation API | json =', JSON.stringify(weatherInf, null, 2));
     const handleSubmit = async (cityName: string) => {
         const weather = await getWeatherInformation(cityName)
@@ -22,8 +21,6 @@ const App = () => {
             setError(weather.message)
         }
     }
-
-
     return (
         <ImageBackground style={styles.backgroundImage}
                          source={require('./src/assets/images/background.jpeg')}>
